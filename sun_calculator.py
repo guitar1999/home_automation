@@ -9,7 +9,7 @@ mylat = config.get('location', 'LAT')
 mylon = config.get('location', 'LON')
 
 # Temp Args
-start_hour = sys.argv[1]
+start_hour = int(sys.argv[1])
 
 sun = ephem.Sun()
 home = ephem.Observer()

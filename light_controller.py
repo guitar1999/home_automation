@@ -19,4 +19,4 @@ login_url = "http://{0}:{1}/ZAutomation/api/v1/login".format(pi_ip, pi_port)
 url = "http://{0}:{1}/ZWaveAPI/Run/devices[{2}].instances[{3}].SwitchMultilevel.Set({4})".format(pi_ip, pi_port, device, instance, level)
 
 os.system('''wget --save-cookies /tmp/cookies.txt --keep-session-cookies --post-data 'login={0}&password={1}' --delete-after {2}'''.format(z_user, z_passwd, login_url))
-os.system('''wget --load-cookies /tmp/cookies.txt "{0}"'''.format(url))
+os.system('''wget --load-cookies /tmp/cookies.txt "{0}" -O- &> /dev/null'''.format(url))
